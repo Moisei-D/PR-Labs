@@ -45,7 +45,7 @@ dotnet run -c Release -- task1b       # threads = logical processors; version 1 
 
 ```bash
 dotnet run -c Release -- task1c --threads 1        # workers: 2, 4, 8, 16, 32, 64
-dotnet run -c Release -- task1c --threads 8 --pool # workers on the thread pool (experiment)
+dotnet run -c Release -- task1c --threads 8 --pool # reader and workers on the thread pool (experiment)
 ```
 
 ## Task 2 – files on the USB drive
