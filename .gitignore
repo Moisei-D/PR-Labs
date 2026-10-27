@@ -1,0 +1,21 @@
+bin/
+obj/
+.idea/
+.vs/
+*.user
+
+# generated input (370 MB + 8 parts) - regenerate with `generate` and `split`; the *_results.csv files are kept
+Lab1/data/numbers.txt
+Lab1/data/parts/
+
+# LaTeX build output
+Reports/**/*.aux
+Reports/**/*.log
+Reports/**/*.out
+Reports/**/*.toc
+Reports/**/*.synctex.gz
+Reports/**/*.fls
+Reports/**/*.fdb_latexmk
+Reports/**/*.bbl
+Reports/**/*.blg
+.venv/

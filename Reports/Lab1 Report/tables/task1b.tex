@@ -1,0 +1,9 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Version & Runs & Median (ms) & Min--max (ms) & Peak mem. (MB) & Counted total \\
+\midrule
+1. no synchronisation & 9 & 337 & 239--636 & 236 & 6\,244\,509--9\,593\,146 \\
+2. lock & 3 & 3059 & 2382--4939 & 236 & 50\,000\,000 \\
+3. counter per thread & 3 & 21 & 17--22 & 236 & 50\,000\,000 \\
+\bottomrule
+\end{tabular}

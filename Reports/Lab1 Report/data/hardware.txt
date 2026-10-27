@@ -1,0 +1,53 @@
+== CPU ==
+CPU(s):                                  16
+Model name:                              AMD Ryzen 7 6800HS with Radeon Graphics
+Thread(s) per core:                      2
+Core(s) per socket:                      8
+Socket(s):                               1
+CPU(s) scaling MHz:                      42%
+CPU max MHz:                             4787.0820
+L2 cache:                                4 MiB (8 instances)
+L3 cache:                                16 MiB (1 instance)
+== RAM ==
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       5.2Gi       3.4Gi       727Mi       7.3Gi       9.7Gi
+== Disks (ROTA=0 means SSD) ==
+NAME    MODEL                       SIZE ROTA TRAN
+sda     USB Flash Disk             29.3G    1 usb
+zram0                              14.8G    0 
+nvme0n1 Micron_2450_MTFDKBA1T0TFK 953.9G    0 nvme
+== USB tree (look at the speed: 480M = USB 2.0, 5000M = USB 3.x) ==
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/4p, 480M
+    |__ Port 003: Dev 002, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 003: Dev 002, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 003: Dev 002, If 2, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 003: Dev 002, If 3, Class=Human Interface Device, Driver=usbhid, 12M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+/:  Bus 003.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/3p, 480M
+    |__ Port 001: Dev 002, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 001: Dev 002, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 001: Dev 002, If 2, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 001: Dev 002, If 3, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 002: Dev 008, If 0, Class=Mass Storage, Driver=usb-storage, 480M
+    |__ Port 003: Dev 004, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 004, If 1, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 004, If 2, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 004, If 3, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 003: Dev 004, If 4, Class=Application Specific Interface, Driver=[none], 480M
+/:  Bus 004.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/2p, 10000M
+/:  Bus 005.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 480M
+    |__ Port 001: Dev 002, If 0, Class=Wireless, Driver=btusb, 480M
+    |__ Port 001: Dev 002, If 1, Class=Wireless, Driver=btusb, 480M
+    |__ Port 001: Dev 002, If 2, Class=Wireless, Driver=[none], 480M
+/:  Bus 006.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 480M
+/:  Bus 007.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 10000M
+/:  Bus 008.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 480M
+/:  Bus 009.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 10000M
+== OS ==
+Linux 7.3.0-4-cachyos x86_64
+PRETTY_NAME="CachyOS"
+== Runtime ==
+10.0.113
+OS: CachyOS
+Runtime: .NET 10.0.13 (X64)
+Logical processors: 16

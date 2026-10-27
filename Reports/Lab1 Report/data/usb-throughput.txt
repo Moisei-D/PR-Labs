@@ -1,0 +1,9 @@
+run 1: 1 reader(s): 23.3 MiB/s total, 23.3 MiB/s per reader, 1.89 s
+run 1: 2 reader(s): 22.5 MiB/s total, 11.2 MiB/s per reader, 3.92 s
+run 1: 4 reader(s): 20.7 MiB/s total, 5.2 MiB/s per reader, 8.50 s
+run 2: 1 reader(s): 23.2 MiB/s total, 23.2 MiB/s per reader, 1.90 s
+run 2: 2 reader(s): 22.2 MiB/s total, 11.1 MiB/s per reader, 3.96 s
+run 2: 4 reader(s): 20.6 MiB/s total, 5.2 MiB/s per reader, 8.55 s
+run 3: 1 reader(s): 23.0 MiB/s total, 23.0 MiB/s per reader, 1.92 s
+run 3: 2 reader(s): 20.7 MiB/s total, 10.3 MiB/s per reader, 4.26 s
+run 3: 4 reader(s): 20.6 MiB/s total, 5.1 MiB/s per reader, 8.56 s
