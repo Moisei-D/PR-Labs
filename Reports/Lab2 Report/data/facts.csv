@@ -1,0 +1,32 @@
+name,value
+one_answer_ms,4.4
+one_ready_seconds,11.00
+two_menu_ms,0.9
+two_seconds,11.0
+race_rounds,10
+race_clients,20
+race_croissants,7
+race_orders,200
+race_accepted,70
+race_refused,130
+three_alert_ms,1.1
+cons_deliveries,300
+cons_clients,4
+cons_orders,400
+cons_accepted,126
+cons_refused,274
+cons_ready,0
+cons_stock,194
+cons_stock_after,320
+four_close_ms,6
+four_freed_seconds,2.02
+four_reset_ms,21
+four_kill_ms,5
+net_seconds,24.4
+bad_random_errors,11
+bad_flood_errors,1035
+bad_flood_worst_ms,5.3
+mute_seconds,5.5
+mute_sent,635000
+restart_first,coffee=48 tea=22 croissant=39
+restart_after,coffee=48 tea=27 croissant=38

@@ -1,0 +1,16 @@
+  0.102  -- one message in two pieces, half a second apart
+  0.102  A  > 'ME'
+  0.602  A  > 'NU\n'
+  0.605  A  < MENU coffee=12 tea=30 croissant=7
+  0.605  -- three messages in one send
+  0.605  A  > 'MENU\nORDER tea 1\nMENU\n'
+  0.605  A  < MENU coffee=12 tea=30 croissant=7
+  0.646  A  < ACCEPTED order=1 seconds=3
+  0.646  A  < MENU coffee=12 tea=29 croissant=7
+  0.646  -- one message sent byte by byte
+  0.646  A  > 'M' 'E' 'N' 'U' '\n' (five sends, 0.05 s apart)
+  0.848  A  < MENU coffee=12 tea=29 croissant=7
+  1.198  -- a line that ends with \r\n, as telnet sends it
+  1.198  A  > 'menu\r\n'
+  1.198  A  < MENU coffee=12 tea=29 croissant=7
+  1.219  A  ! closes the connection

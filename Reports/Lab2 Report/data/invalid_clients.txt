@@ -1,0 +1,48 @@
+  0.102  -- unknown commands, missing and wrong parameters
+  0.102  Z  > HELLO
+  0.111  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.111  Z  > 
+  0.111  Z  < ERROR empty message
+  0.111  Z  > ORDER
+  0.113  Z  < ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+  0.113  Z  > ORDER coffee
+  0.113  Z  < ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+  0.113  Z  > ORDER coffee x
+  0.113  Z  < ERROR the quantity of coffee must be a number from 1 to 1000, not 'x'
+  0.113  Z  > ORDER coffee 1 tea
+  0.114  Z  < ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+  0.114  Z  > ORDER coffee 99999999999
+  0.114  Z  < ERROR the quantity of coffee must be a number from 1 to 1000, not '99999999999'
+  0.114  Z  > ORDER coffee 600 coffee 600
+  0.114  Z  < ERROR the quantity of coffee must be a number from 1 to 1000
+  0.114  Z  > MENU please
+  0.114  Z  < ERROR MENU has no parameters
+  0.114  Z  > PROVIDER now
+  0.115  Z  < ERROR PROVIDER has no parameters
+  0.115  Z  > DELIVER coffee 1
+  0.115  Z  < ERROR only the provider can deliver
+  0.115  -- a message that is too long: 3000 bytes without a line end, then the line end and MENU
+  0.115  Z  > 3000 x 'A'
+  0.115  Z  < ERROR message too long (the limit is 1024 bytes)
+  0.115  Z  > '\nMENU\n'
+  0.116  Z  < MENU coffee=12 tea=30 croissant=7
+  0.116  -- random bytes
+  0.117  Z  > 2000 random bytes and '\n'
+  0.117  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.161  Z  < ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)
+  0.617  Z  > MENU
+  0.617  Z  < MENU coffee=12 tea=30 croissant=7
+  0.618  -- Z floods the server with 256 KB of random bytes while W asks for the menu 50 times
+  1.658  -- Z got 1035 more error messages; W: 50 x MENU answered, the slowest in 5.3 ms
+  1.959  Z  > MENU
+  1.960  Z  < MENU coffee=12 tea=30 croissant=7
+  1.980  Z  ! closes the connection

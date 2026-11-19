@@ -1,0 +1,27 @@
+  0.104  -- five clients, two workers: the orders arrive 0.1 s apart
+  0.104  A  > ORDER coffee 1
+  0.114  A  < ACCEPTED order=1 seconds=4
+  0.215  B  > ORDER tea 1
+  0.217  B  < ACCEPTED order=2 seconds=3
+  0.319  C  > ORDER croissant 2
+  0.320  C  < ACCEPTED order=3 seconds=4
+  0.420  D  > ORDER croissant 1
+  0.421  D  < ACCEPTED order=4 seconds=2
+  0.522  E  > ORDER tea 1 croissant 1
+  0.523  E  < ACCEPTED order=5 seconds=5
+  1.124  -- both workers are busy: C asks for the menu, D orders again
+  1.124  C  > MENU
+  1.125  C  < MENU coffee=11 tea=28 croissant=3
+  1.125  D  > ORDER tea 1
+  1.126  D  < ACCEPTED order=6 seconds=3
+  3.218  B  < READY order=2
+  4.120  A  < READY order=1
+  6.118  D  < READY order=4
+  7.219  C  < READY order=3
+ 10.219  D  < READY order=6
+ 11.117  E  < READY order=5
+ 11.136  A  ! closes the connection
+ 11.157  B  ! closes the connection
+ 11.177  C  ! closes the connection
+ 11.189  D  ! closes the connection
+ 11.198  E  ! closes the connection

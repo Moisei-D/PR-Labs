@@ -1,0 +1,10 @@
+processor=Intel(R) Xeon(R) Processor @ 2.10GHz
+logical_processors=2
+cores_per_socket=2
+threads_per_core=1
+memory_gib=7.8
+os=Ubuntu 24.04.5 LTS
+kernel=6.18.44-fc-v553
+dotnet=10.0.115
+python=3.13.18
+date=2026-11-17

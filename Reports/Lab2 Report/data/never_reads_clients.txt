@@ -1,0 +1,5 @@
+  0.102  -- N sends MENU again and again and never calls recv
+  5.609  -- N sent about 635000 x MENU; the server gave up and closed the connection after 5.5 s
+  5.609  W  > MENU
+  5.613  W  < MENU coffee=12 tea=30 croissant=7
+  5.634  W  ! closes the connection

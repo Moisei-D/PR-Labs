@@ -1,0 +1,21 @@
+\begin{tabular}{lllr}
+\toprule
+Scenario & For & What it tries & Checks passed \\
+\midrule
+\texttt{task1} & Task 1 & menu, order, refusal, errors, READY after 11 s & 11 of 11 \\
+\texttt{framing} & Task 1 & messages in pieces, several in one send & 4 of 4 \\
+\texttt{task2} & Task 2 & five clients, two workers, queue order & 6 of 6 \\
+\texttt{race} & Task 2 & 20 simultaneous orders for 7 croissants, 10 rounds & 2 of 2 \\
+\texttt{task3} & Task 3 & provider, delivery, alerts & 13 of 13 \\
+\texttt{conservation} & Task 3 & deliveries and orders at the same moment & 2 of 2 \\
+\texttt{task4} & Task 4 & closed, reset and killed clients & 11 of 11 \\
+\texttt{network} & Task 4 & a client whose network is gone & 3 of 3 \\
+\texttt{invalid} & Task 4 & wrong commands, long message, random bytes & 17 of 17 \\
+\texttt{never\_reads} & Task 4 & a client that never reads & 2 of 2 \\
+\texttt{client\_cs} & Task 4 & the console client in C\# & 2 of 2 \\
+\texttt{client\_py} & Bonus & the console client in Python & 2 of 2 \\
+\texttt{restart} & Bonus & random stock; stock kept after a restart & 3 of 3 \\
+\texttt{idle\_clients} & Questions & 1000 idle clients & 1 of 1 \\
+\texttt{workers} & Questions & 1 to 16 workers & 1 of 1 \\
+\bottomrule
+\end{tabular}

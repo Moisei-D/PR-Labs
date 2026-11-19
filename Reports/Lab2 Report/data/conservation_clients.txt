@@ -1,0 +1,8 @@
+  0.111  -- the provider sends 300 deliveries of 1 coffee while 4 clients send 100 orders of 1 coffee each
+  0.278  W  > MENU
+  0.279  W  < MENU coffee=194 tea=100 croissant=100
+  0.279  -- delivered 300, accepted 126, refused 274: coffee must be 20 + 300 - 126 = 194; the menu says 194
+  0.634  W  > MENU
+  0.635  W  < MENU coffee=320 tea=100 croissant=100
+  0.635  -- the clients leave; 0 orders were ready before, the others are cancelled: coffee must be 20 + 300 - 0 = 320; the menu says 320
+  0.655  W  ! closes the connection

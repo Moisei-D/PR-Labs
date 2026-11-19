@@ -1,0 +1,6 @@
+  0.102  -- N sends MENU again and again and never calls recv
+  5.609  -- N sent about 635000 x MENU; the server gave up and closed the connection after 5.5 s
+
+the log of the server:
+19:00:58.804  127.0.0.1:44828  error: send failed (TimedOut), the server closes the connection
+19:00:58.813  127.0.0.1:44828  disconnected: the server closed the connection

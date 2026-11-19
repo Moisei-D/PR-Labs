@@ -1,0 +1,21 @@
+19:00:18.496  127.0.0.1:36982  order 3 accepted: croissant=3, 6 s; in stock: coffee=10 tea=28 croissant=4
+19:00:18.547  127.0.0.1:36990  order 4 accepted: croissant=1, 2 s; in stock: coffee=10 tea=28 croissant=3
+19:00:19.564  127.0.0.1:36982  disconnected: the client closed the connection
+19:00:19.566  127.0.0.1:36982  order 1 cancelled (was being prepared): coffee=2 back in the stock
+19:00:19.566  127.0.0.1:36982  order 3 cancelled (waited in the queue): croissant=3 back in the stock
+19:00:19.567  127.0.0.1:36982  order 1: worker 1 stopped, the client is gone
+19:00:19.567  127.0.0.1:36990  order 4: worker 1 prepares it (2 s)
+19:00:21.567  127.0.0.1:36990  order 4 ready (worker 1)
+19:00:24.444  127.0.0.1:36990  order 2 ready (worker 2)
+19:00:24.447  127.0.0.1:51080  connected
+19:00:24.448  127.0.0.1:51080  order 5 accepted: coffee=3, 12 s; in stock: coffee=9 tea=28 croissant=6
+19:00:24.448  127.0.0.1:51080  order 5: worker 1 prepares it (12 s)
+19:00:24.970  127.0.0.1:51080  disconnected: connection lost (ConnectionReset)
+19:00:24.971  127.0.0.1:51080  order 5 cancelled (was being prepared): coffee=3 back in the stock
+19:00:24.971  127.0.0.1:51080  order 5: worker 1 stopped, the client is gone
+19:00:25.025  127.0.0.1:51084  connected
+19:00:25.029  127.0.0.1:51084  order 6 accepted: tea=5, 15 s; in stock: coffee=12 tea=23 croissant=6
+19:00:25.029  127.0.0.1:51084  order 6: worker 2 prepares it (15 s)
+19:00:25.535  127.0.0.1:51084  disconnected: the client closed the connection
+19:00:25.537  127.0.0.1:51084  order 6 cancelled (was being prepared): tea=5 back in the stock
+19:00:25.537  127.0.0.1:51084  order 6: worker 2 stopped, the client is gone

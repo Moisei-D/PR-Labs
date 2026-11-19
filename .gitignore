@@ -8,6 +8,10 @@ obj/
 Lab1/data/numbers.txt
 Lab1/data/parts/
 
+# Lab 2: the saved stock and the output of tests/scenarios.py (the report keeps its own copy)
+Lab2/data/
+__pycache__/
+
 # LaTeX build output
 Reports/**/*.aux
 Reports/**/*.log

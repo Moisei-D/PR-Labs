@@ -1,0 +1,9 @@
+  0.102  X  > ORDER coffee 10
+  0.113  X  < ACCEPTED order=1 seconds=40
+  1.113  -- the network of X is cut: all its packets are dropped, in both directions; nothing is closed
+  4.118  Y  > MENU
+  4.119  Y  < MENU coffee=2 tea=30 croissant=7
+ 25.561  -- the server noticed 24.4 s after the cut
+ 25.561  Y  > MENU
+ 25.562  Y  < MENU coffee=12 tea=30 croissant=7
+ 25.622  Y  ! closes the connection

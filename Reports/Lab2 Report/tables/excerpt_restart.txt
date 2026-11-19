@@ -1,0 +1,6 @@
+19:01:09.099  server           new random stock: coffee=48 tea=22 croissant=39
+19:01:09.120  server           listening on port 5112, 2 workers
+19:01:09.176  127.0.0.1:57974  order 1 accepted: croissant=1, 2 s; in stock: coffee=48 tea=22 croissant=38
+19:01:09.180  127.0.0.1:57990  delivery: tea=5; in stock: coffee=48 tea=27 croissant=38
+19:01:11.525  server           stock read from data/restart_stock.txt: coffee=48 tea=27 croissant=38
+19:01:11.544  server           listening on port 5112, 2 workers

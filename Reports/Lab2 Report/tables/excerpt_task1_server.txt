@@ -1,0 +1,18 @@
+18:59:50.649  server           stock read from data/task1_stock.txt: coffee=12 tea=30 croissant=7
+18:59:50.667  server           listening on port 5100, 2 workers
+18:59:50.705  127.0.0.1:60680  connected
+18:59:50.712  127.0.0.1:60680  order 1 accepted: coffee=1 tea=1 croissant=2, 11 s; in stock: coffee=11
+                                tea=29 croissant=5
+18:59:50.712  127.0.0.1:60680  order 1: worker 1 prepares it (11 s)
+18:59:50.713  127.0.0.1:60680  order refused: croissant=6; in stock: coffee=11 tea=29 croissant=5
+18:59:50.714  127.0.0.1:60680  error: unknown product 'beer' (products: coffee, tea, croissant) <- "ORDER
+                                beer 1"
+18:59:50.714  127.0.0.1:60680  error: the quantity of tea must be a number from 1 to 1000, not '0' <- "ORDER
+                                tea 0"
+18:59:50.715  127.0.0.1:60680  error: the quantity of tea must be a number from 1 to 1000, not '-1' <-
+                                "ORDER tea -1"
+18:59:50.715  127.0.0.1:60680  error: the quantity of tea must be a number from 1 to 1000, not 'two' <-
+                                "ORDER tea two"
+18:59:50.715  127.0.0.1:60680  error: the quantity of tea must be a number from 1 to 1000, not '1.5' <-
+                                "ORDER tea 1.5"
+19:00:01.714  127.0.0.1:60680  order 1 ready (worker 1)

@@ -1,0 +1,74 @@
+  0.102  -- 10 rounds: 20 clients order 1 croissant at the same moment, the stock has 7
+  0.138  W  > MENU
+  0.139  W  < MENU coffee=12 tea=30 croissant=0
+  0.139  -- round 1: accepted 7, refused 13, croissants left 0
+  0.380  W  > MENU
+  0.380  W  < MENU coffee=12 tea=30 croissant=7
+  0.380  W  > MENU
+  0.380  W  < MENU coffee=12 tea=30 croissant=7
+  0.393  W  > MENU
+  0.393  W  < MENU coffee=12 tea=30 croissant=0
+  0.393  -- round 2: accepted 7, refused 13, croissants left 0
+  0.632  W  > MENU
+  0.632  W  < MENU coffee=12 tea=30 croissant=6
+  0.653  W  > MENU
+  0.653  W  < MENU coffee=12 tea=30 croissant=7
+  0.653  W  > MENU
+  0.653  W  < MENU coffee=12 tea=30 croissant=7
+  0.665  W  > MENU
+  0.665  W  < MENU coffee=12 tea=30 croissant=0
+  0.665  -- round 3: accepted 7, refused 13, croissants left 0
+  0.925  W  > MENU
+  0.928  W  < MENU coffee=12 tea=30 croissant=7
+  0.928  W  > MENU
+  0.928  W  < MENU coffee=12 tea=30 croissant=7
+  0.940  W  > MENU
+  0.940  W  < MENU coffee=12 tea=30 croissant=0
+  0.940  -- round 4: accepted 7, refused 13, croissants left 0
+  1.182  W  > MENU
+  1.183  W  < MENU coffee=12 tea=30 croissant=7
+  1.183  W  > MENU
+  1.183  W  < MENU coffee=12 tea=30 croissant=7
+  1.198  W  > MENU
+  1.199  W  < MENU coffee=12 tea=30 croissant=0
+  1.199  -- round 5: accepted 7, refused 13, croissants left 0
+  1.416  W  > MENU
+  1.420  W  < MENU coffee=12 tea=30 croissant=7
+  1.420  W  > MENU
+  1.420  W  < MENU coffee=12 tea=30 croissant=7
+  1.455  W  > MENU
+  1.455  W  < MENU coffee=12 tea=30 croissant=0
+  1.456  -- round 6: accepted 7, refused 13, croissants left 0
+  1.636  W  > MENU
+  1.637  W  < MENU coffee=12 tea=30 croissant=7
+  1.638  W  > MENU
+  1.638  W  < MENU coffee=12 tea=30 croissant=7
+  1.649  W  > MENU
+  1.649  W  < MENU coffee=12 tea=30 croissant=0
+  1.649  -- round 7: accepted 7, refused 13, croissants left 0
+  1.908  W  > MENU
+  1.909  W  < MENU coffee=12 tea=30 croissant=7
+  1.910  W  > MENU
+  1.910  W  < MENU coffee=12 tea=30 croissant=7
+  1.920  W  > MENU
+  1.920  W  < MENU coffee=12 tea=30 croissant=0
+  1.920  -- round 8: accepted 7, refused 13, croissants left 0
+  2.118  W  > MENU
+  2.119  W  < MENU coffee=12 tea=30 croissant=7
+  2.119  W  > MENU
+  2.119  W  < MENU coffee=12 tea=30 croissant=7
+  2.148  W  > MENU
+  2.149  W  < MENU coffee=12 tea=30 croissant=0
+  2.150  -- round 9: accepted 7, refused 13, croissants left 0
+  2.410  W  > MENU
+  2.411  W  < MENU coffee=12 tea=30 croissant=7
+  2.411  W  > MENU
+  2.411  W  < MENU coffee=12 tea=30 croissant=7
+  2.436  W  > MENU
+  2.436  W  < MENU coffee=12 tea=30 croissant=0
+  2.437  -- round 10: accepted 7, refused 13, croissants left 0
+  2.717  W  > MENU
+  2.718  W  < MENU coffee=12 tea=30 croissant=7
+  2.718  W  > MENU
+  2.718  W  < MENU coffee=12 tea=30 croissant=7
+  2.738  W  ! closes the connection

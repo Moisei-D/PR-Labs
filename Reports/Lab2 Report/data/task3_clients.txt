@@ -1,0 +1,38 @@
+  0.102  A  > DELIVER coffee 5
+  0.108  A  < ERROR only the provider can deliver
+  0.108  -- no provider is connected; an order leaves 4 coffees
+  0.108  A  > ORDER coffee 2
+  0.112  A  < ACCEPTED order=1 seconds=8
+  0.112  -- the provider connects
+  0.113  P  > PROVIDER
+  0.114  P  < PROVIDER ok
+  0.114  P  < ALERT coffee=4
+  0.114  -- an order of a client makes the coffee fall again
+  0.114  A  > ORDER coffee 1
+  0.115  A  < ACCEPTED order=2 seconds=4
+  0.116  P  < ALERT coffee=3
+  0.116  A  > ORDER tea 1
+  0.116  A  < ACCEPTED order=3 seconds=3
+  0.617  P  > DELIVER coffee 20 croissant 10
+  0.620  P  < DELIVERED coffee=23 tea=29 croissant=17
+  0.620  A  > MENU
+  0.621  A  < MENU coffee=23 tea=29 croissant=17
+  0.621  P  > ORDER tea 1
+  0.621  P  < ERROR the provider cannot order
+  0.621  P  > DELIVER coffee
+  0.621  P  < ERROR usage: DELIVER <product> <quantity> [<product> <quantity> ...]
+  0.621  P  > DELIVER coffee -5
+  0.621  P  < ERROR the quantity of coffee must be a number from 1 to 1000, not '-5'
+  0.622  P2 > PROVIDER
+  0.622  P2 < ERROR a provider is already connected
+  0.642  P2 ! closes the connection
+  0.643  -- the provider disappears; the shop goes on
+  0.662  P  ! closes the connection
+  0.662  A  > ORDER croissant 14
+  0.664  A  < ACCEPTED order=4 seconds=28
+  0.664  -- a new provider connects
+  0.664  P3 > PROVIDER
+  0.665  P3 < PROVIDER ok
+  0.665  P3 < ALERT croissant=3
+  0.684  A  ! closes the connection
+  0.685  P3 ! closes the connection

@@ -1,0 +1,22 @@
+  0.103  A  > MENU
+  0.109  A  < MENU coffee=12 tea=30 croissant=7
+  0.109  A  > ORDER croissant 2 tea 1 coffee 1
+  0.114  A  < ACCEPTED order=1 seconds=11
+  0.114  A  > MENU
+  0.114  A  < MENU coffee=11 tea=29 croissant=5
+  0.114  A  > ORDER croissant 6
+  0.115  A  < REFUSED not enough in stock: coffee=11 tea=29 croissant=5
+  0.115  A  > MENU
+  0.115  A  < MENU coffee=11 tea=29 croissant=5
+  0.115  A  > ORDER beer 1
+  0.116  A  < ERROR unknown product 'beer' (products: coffee, tea, croissant)
+  0.116  A  > ORDER tea 0
+  0.116  A  < ERROR the quantity of tea must be a number from 1 to 1000, not '0'
+  0.116  A  > ORDER tea -1
+  0.116  A  < ERROR the quantity of tea must be a number from 1 to 1000, not '-1'
+  0.116  A  > ORDER tea two
+  0.116  A  < ERROR the quantity of tea must be a number from 1 to 1000, not 'two'
+  0.116  A  > ORDER tea 1.5
+  0.117  A  < ERROR the quantity of tea must be a number from 1 to 1000, not '1.5'
+ 11.116  A  < READY order=1
+ 11.140  A  ! closes the connection

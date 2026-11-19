@@ -1,0 +1,11 @@
+  0.102  -- 10 rounds: 20 clients order 1 croissant at the same moment, the stock has 7
+  0.139  -- round 1: accepted 7, refused 13, croissants left 0
+  0.393  -- round 2: accepted 7, refused 13, croissants left 0
+  0.665  -- round 3: accepted 7, refused 13, croissants left 0
+  0.940  -- round 4: accepted 7, refused 13, croissants left 0
+  1.199  -- round 5: accepted 7, refused 13, croissants left 0
+  1.456  -- round 6: accepted 7, refused 13, croissants left 0
+  1.649  -- round 7: accepted 7, refused 13, croissants left 0
+  1.920  -- round 8: accepted 7, refused 13, croissants left 0
+  2.150  -- round 9: accepted 7, refused 13, croissants left 0
+  2.437  -- round 10: accepted 7, refused 13, croissants left 0

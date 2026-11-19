@@ -1,0 +1,9 @@
+Connected to 127.0.0.1:5110 as a client.
+Commands:
+  menu                                 the products and how many are in stock
+  order croissant 2 tea 1 coffee 1     order products
+  help, quit
+[19:00:59] MENU coffee=12 tea=30 croissant=7
+[19:00:59] ACCEPTED order=1 seconds=3
+[19:01:02] READY order=1
+The server closed the connection.

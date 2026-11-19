@@ -1,0 +1,28 @@
+  0.102  -- X has one order at a worker and one in the queue; Y the same
+  0.102  X  > ORDER coffee 2
+  0.111  X  < ACCEPTED order=1 seconds=8
+  0.162  Y  > ORDER tea 2
+  0.164  Y  < ACCEPTED order=2 seconds=6
+  0.216  X  > ORDER croissant 3
+  0.217  X  < ACCEPTED order=3 seconds=6
+  0.267  Y  > ORDER croissant 1
+  0.268  Y  < ACCEPTED order=4 seconds=2
+  0.268  Y  > MENU
+  0.269  Y  < MENU coffee=10 tea=28 croissant=3
+  1.269  -- X closes its connection
+  1.284  X  ! closes the connection
+  1.290  Y  > MENU
+  1.290  Y  < MENU coffee=12 tea=28 croissant=6
+  3.288  Y  < READY order=4
+  6.164  Y  < READY order=2
+  6.166  -- Z resets its connection (RST) while its order is prepared
+  6.167  Z  > ORDER coffee 3
+  6.168  Z  < ACCEPTED order=5 seconds=12
+  6.673  Z  ! resets the connection (RST)
+  6.695  Y  > MENU
+  6.695  Y  < MENU coffee=12 tea=28 croissant=6
+  6.695  -- the process of a console client (Client.cs) is killed while its order is prepared
+  7.260  -- kill -9 of the client process; the server logged the end of the connection 5 ms later
+  7.260  Y  > MENU
+  7.260  Y  < MENU coffee=12 tea=28 croissant=6
+  7.280  Y  ! closes the connection

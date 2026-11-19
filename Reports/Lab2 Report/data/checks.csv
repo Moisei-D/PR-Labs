@@ -1,0 +1,81 @@
+scenario,check,result,detail
+task1,the menu shows the products and the stock,PASS,MENU coffee=12 tea=30 croissant=7
+task1,the order is accepted with its number and 2*2+3+4 = 11 seconds,PASS,"ACCEPTED order=1 seconds=11, answered in 4.4 ms"
+task1,"the products are taken from the stock at once, before the order is ready",PASS,MENU coffee=11 tea=29 croissant=5
+task1,"more than the stock has: refused, with how many are left",PASS,REFUSED not enough in stock: coffee=11 tea=29 croissant=5
+task1,a refused order takes nothing,PASS,
+task1,unknown product gets an error message,PASS,"ERROR unknown product 'beer' (products: coffee, tea, croissant)"
+task1,quantity 0 gets an error message,PASS,"ERROR the quantity of tea must be a number from 1 to 1000, not '0'"
+task1,negative quantity gets an error message,PASS,"ERROR the quantity of tea must be a number from 1 to 1000, not '-1'"
+task1,quantity that is not a number gets an error message,PASS,"ERROR the quantity of tea must be a number from 1 to 1000, not 'two'"
+task1,quantity that is not whole gets an error message,PASS,"ERROR the quantity of tea must be a number from 1 to 1000, not '1.5'"
+task1,READY arrives by itself after the preparation time,PASS,11.00 s after ACCEPTED
+framing,half a message gets no answer; the answer comes when the rest arrives,PASS,MENU coffee=12 tea=30 croissant=7
+framing,"three messages in one send get three answers, in order",PASS,MENU coffee=12 tea=30 croissant=7 | ACCEPTED order=1 seconds=3 | MENU coffee=12 tea=29 croissant=7
+framing,a message sent byte by byte gets one answer,PASS,MENU coffee=12 tea=29 croissant=7
+framing,\r\n and lower case are accepted,PASS,MENU coffee=12 tea=29 croissant=7
+task2,"all five orders are accepted at once, though only two workers exist",PASS,
+task2,a client that waits for its order can ask for the menu and is answered at once,PASS,0.9 ms
+task2,a client that waits for its order can order again,PASS,ACCEPTED order=6 seconds=3
+task2,every client is told when its order is ready,PASS,"[1, 2, 3, 4, 5, 6]"
+task2,never more than two orders are prepared at the same time,PASS,at most 2
+task2,the workers take the waiting orders in the order in which they arrived,PASS,1 2 3 4 5 6
+race,in each of 10 rounds exactly 7 of 20 simultaneous orders get a croissant,PASS,accepted/refused/left: 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0 7/13/0
+race,"after the clients leave, all the croissants are back in the stock",PASS,
+task3,a client that tries to deliver gets an error,PASS,ERROR only the provider can deliver
+task3,the shop works without a provider,PASS,ACCEPTED order=1 seconds=8
+task3,"the provider gets the waiting alert when it connects, without asking",PASS,PROVIDER ok | ALERT coffee=4
+task3,the provider is alerted at once when a product falls below 5,PASS,"ALERT coffee=3, 1.1 ms after the order was sent"
+task3,no alert for a product that has 5 or more,PASS,
+task3,a delivery is added to the stock at once,PASS,DELIVERED coffee=23 tea=29 croissant=17
+task3,the clients see the delivered products,PASS,
+task3,the provider cannot order,PASS,ERROR the provider cannot order
+task3,a delivery without a quantity gets an error,PASS,ERROR usage: DELIVER <product> <quantity> [<product> <quantity> ...]
+task3,a negative delivery gets an error,PASS,"ERROR the quantity of coffee must be a number from 1 to 1000, not '-5'"
+task3,a second provider is refused while the first is connected,PASS,ERROR a provider is already connected
+task3,orders are accepted after the provider has disappeared,PASS,ACCEPTED order=4 seconds=28
+task3,a new provider can connect and gets the alert that nobody received,PASS,PROVIDER ok | ALERT croissant=3
+conservation,deliveries and orders at the same moment: the stock is exactly start + delivered - ordered,PASS,"20 + 300 - 126 = 194, menu: 194"
+conservation,"after the clients leave, every order that was not ready is back in the stock",PASS,"20 + 300 - 0 = 320, menu: 320"
+task4,before: the products of all four orders are out of the stock,PASS,
+task4,a closed connection is noticed at once,PASS,6 ms
+task4,the order at the worker and the order in the queue are both cancelled,PASS,
+task4,the worker stops preparing the cancelled order,PASS,
+task4,the products go back to the stock,PASS,
+task4,"the freed worker takes the next waiting order at once (order 4, 2 s)",PASS,READY order=4 2.02 s after X left
+task4,the orders of the other client are not touched,PASS,READY order=2
+task4,a reset connection is noticed at once (Receive fails),PASS,21 ms
+task4,its products are back,PASS,
+task4,a killed client process is noticed at once (the system closes its socket),PASS,5 ms
+task4,its products are back too,PASS,
+network,3 s after the cut the server has noticed nothing: the products of X are still out,PASS,
+network,keep-alive notices the silent client in about 25 s (10 s + 3 probes of 5 s),PASS,24.4 s
+network,then its order is cancelled and the products are back,PASS,
+invalid,'HELLO' gets an error message,PASS,"ERROR unknown command (commands: MENU, ORDER, PROVIDER, DELIVER)"
+invalid,'' gets an error message,PASS,ERROR empty message
+invalid,'ORDER' gets an error message,PASS,ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+invalid,'ORDER coffee' gets an error message,PASS,ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+invalid,'ORDER coffee x' gets an error message,PASS,"ERROR the quantity of coffee must be a number from 1 to 1000, not 'x'"
+invalid,'ORDER coffee 1 tea' gets an error message,PASS,ERROR usage: ORDER <product> <quantity> [<product> <quantity> ...]
+invalid,'ORDER coffee 99999999999' gets an error message,PASS,"ERROR the quantity of coffee must be a number from 1 to 1000, not '99999999999'"
+invalid,'ORDER coffee 600 coffee 600' gets an error message,PASS,ERROR the quantity of coffee must be a number from 1 to 1000
+invalid,'MENU please' gets an error message,PASS,ERROR MENU has no parameters
+invalid,'PROVIDER now' gets an error message,PASS,ERROR PROVIDER has no parameters
+invalid,'DELIVER coffee 1' gets an error message,PASS,ERROR only the provider can deliver
+invalid,"a message that is too long gets one error message, already before its end arrives",PASS,ERROR message too long (the limit is 1024 bytes)
+invalid,after the long message the connection works again,PASS,MENU coffee=12 tea=30 croissant=7
+invalid,random bytes get error messages and the connection still works,PASS,"11 error messages, then MENU coffee=12 tea=30 croissant=7"
+invalid,the flood of one client does not block another client,PASS,"50 menus, the slowest answer 5.3 ms"
+invalid,after the flood the connection of Z itself still works,PASS,MENU coffee=12 tea=30 croissant=7
+invalid,the server is still running after all of this,PASS,
+never_reads,a client that never reads is disconnected (Send gives up after 5 s),PASS,5.5 s
+never_reads,another client is served normally,PASS,4.0 ms
+client_cs,READY is shown while the program waits for the keyboard,PASS,
+client_cs,"the program ends by itself, with exit code 0, when the server disappears",PASS,exit code 0; last line: The server closed the connection.
+client_py,READY is shown while the program waits for the keyboard,PASS,
+client_py,"the program ends by itself, with exit code 0, when the server disappears",PASS,exit code 0; last line: The server closed the connection.
+restart,a new stock has a random amount from 10 to 50 of each product,PASS,coffee=48 tea=22 croissant=39
+restart,the stock is the same after the server was killed and started again,PASS,"before: {'coffee': 48, 'tea': 27, 'croissant': 38}  after: {'coffee': 48, 'tea': 27, 'croissant': 38}"
+restart,five more starts with --new-stock: all 15 amounts are from 10 to 50,PASS,16 35 50 37 26 46 46 20 14 14 34 19 39 11 43
+idle_clients,with 1000 idle clients the server has about 1000 more threads and still answers,PASS,"14 -> 1013 threads, 31.0 -> 63.2 MB"
+workers,"8 orders of 2 s take 16, 8, 4, 2 and 2 s with 1, 2, 4, 8 and 16 workers",PASS,1:16.02s 2:8.01s 4:4.01s 8:2.01s 16:2.01s

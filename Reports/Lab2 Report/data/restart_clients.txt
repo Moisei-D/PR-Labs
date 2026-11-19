@@ -1,0 +1,15 @@
+  0.102  A  > ORDER croissant 1
+  0.111  A  < ACCEPTED order=1 seconds=2
+  0.112  P  > PROVIDER
+  0.113  P  < PROVIDER ok
+  0.114  P  > DELIVER tea 5
+  0.115  P  < DELIVERED coffee=48 tea=27 croissant=38
+  2.114  A  < READY order=1
+  2.114  A  > MENU
+  2.114  A  < MENU coffee=48 tea=27 croissant=38
+  2.114  -- the server is killed (kill -9) and started again
+  2.116  P  ! the server closed the connection
+  2.117  A  ! the server closed the connection
+  2.519  B  > MENU
+  2.526  B  < MENU coffee=48 tea=27 croissant=38
+  2.546  B  ! closes the connection
